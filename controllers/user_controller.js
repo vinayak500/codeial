@@ -12,6 +12,14 @@ module.exports.profile = function(req , res){
 //render signup page
 module.exports.signUp = function(req,res)
 {
+
+     if(req.isAuthenticated())
+     {
+          return req.redirect('./users/profile');
+     }
+
+
+
       return res.render('user_sign_up' , {
         title: "Codeial! Sign Up"
       })
@@ -20,8 +28,15 @@ module.exports.signUp = function(req,res)
 //render signin page
 module.exports.signIn = function(req,res)
 {
+
+     if(req.isAuthenticated())
+     {
+          return req.redirect('./users/profile');
+     }
+
+
       return res.render('user_sign_in' , {
-        title: "Codeial! Sign In"
+        title: "Codeial! Sign In",
       })
 };
 
