@@ -1,3 +1,6 @@
 body {
   margin: 0px;
   /* text-align: center; */ }
+
+#layout-main {
+  height: 100%; }
