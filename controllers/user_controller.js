@@ -15,7 +15,7 @@ module.exports.signUp = function(req,res)
 
      if(req.isAuthenticated())
      {
-          return req.redirect('./users/profile');
+          return res.redirect('/users/profile');
      }
 
 
@@ -31,7 +31,7 @@ module.exports.signIn = function(req,res)
 
      if(req.isAuthenticated())
      {
-          return req.redirect('./users/profile');
+          return res.redirect('/users/profile');
      }
 
 
