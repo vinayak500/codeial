@@ -4,7 +4,7 @@ const passport = require('passport');
 const usercontroller = require('../controllers/user_controller');
 
 
-router.get('/profile' , usercontroller.profile );
+router.get('/profile' , passport.checkAuthentication ,  usercontroller.profile );
 router.get('/sign-in' , usercontroller.signIn );
 router.get('/sign-up' , usercontroller.signUp );
 router.post('/create' , usercontroller.create );
