@@ -1,18 +1,24 @@
-<header>
-    Page Header
-</header>
 
+<div id="outer-div">
+    <div id="page-tittle">
+        Codeial!
+    </div>
+    
+    <div>
+        <ul>
+            <% if(locals.user){ %>
+        
+                <li> <%= user.name %> </li>
+                <li>   <a href="/users/sign-out"> Sign Out </a> </li>
+        
+            <% }else{ %>
+             
+        
+                <a href="/users/sign-in"> Sign In </a>
+        
+            <% } %>
+         </ul>
+    </div>
 
- <ul>
-    <% if(locals.user){ %>
+</div>
 
-        <li> <%= user.name %> </li>
-        <li>   <a href="/users/sign-out"> Sign Out </a> </li>
-
-    <% }else{ %>
-     
-
-        <a href="/users/sign-in"> Sign In </a>
-
-    <% } %>
- </ul>
