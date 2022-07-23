@@ -1,0 +1,17 @@
+#main {
+  display: flex;
+  flex-direction: row; }
+
+#profile {
+  flex-grow: 1;
+  margin-left: 40px; }
+
+#feed-posts {
+  flex-grow: 1; }
+
+#messages {
+  flex-grow: 1; }
+
+#profile a {
+  text-decoration: none;
+  color: blue; }

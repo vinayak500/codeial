@@ -1,2 +1,23 @@
+#outer-div {
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: fit-content; }
+
 #page-tittle {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; }
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: white;
+  font-weight: 600;
+  font-size: 50px;
+  margin-left: 600px; }
+
+#options {
+  margin-right: 100px;
+  display: flex;
+  flex-direction: row; }
+
+#options a {
+  color: white;
+  font-size: 18px;
+  padding: 5px; }

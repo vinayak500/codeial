@@ -1,10 +1,13 @@
-
+<link rel="stylesheet" href="/css/layout.css">
 <div id="outer-div">
+
+
+
     <div id="page-tittle">
         Codeial!
     </div>
     
-    <div>
+    <!-- <div>
         <ul>
             <% if(locals.user){ %>
         
@@ -18,6 +21,16 @@
         
             <% } %>
          </ul>
+    </div> -->
+
+    <div id="options">
+        <% if(locals.user){ %>
+            <a href="/users/profile">  <p> <%= user.name %> </p> </a>
+           <a href="/users/sign-out">   <p>   Sign Out </p> </a> 
+        <% }else{ %>
+            <a href="/users/sign-in"> Sign In </a>
+            <a href="/users/sign-up"> Sign Up </a>
+         <% } %>  
     </div>
 
 </div>
