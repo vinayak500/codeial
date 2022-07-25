@@ -8,7 +8,7 @@ router.get('/profile/:id' , passport.checkAuthentication ,  usercontroller.profi
 router.get('/sign-in' , usercontroller.signIn );
 router.get('/sign-up' , usercontroller.signUp );
 router.post('/create' , usercontroller.create );
-
+router.post('/update/:id' , passport.checkAuthentication ,  usercontroller.update );
 
 //use passport as middleware to authenticate
 router.post('/create-session' , passport.authenticate(
