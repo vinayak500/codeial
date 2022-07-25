@@ -31,11 +31,17 @@
                 
                 <li> 
                   <p>
+                   
                       <%= post.content %> 
+
                     <br>
                      <small>
                        <%= post.user.name %>
                      </small>
+                     <% if ((locals.user) && (locals.user.id == post.user.id)){ %>
+                  
+                      <small> <a href="/posts/destroy/<%= post.id %>"> Delete </a></small>  
+                        <% } %>
                   </p>
                   
                   <div class ="post-comments">
