@@ -38,9 +38,25 @@
     
     
     
-    <section id="messages">
-      <h2> Messages Section </h2>
-      <h2> Under Construction </h2>
+    <section id="messages-and-friends">
+  
+      <div id="friends">
+        <h2> Friends Section</h2>
+        <h2> Under Construction </h2>
+        <h4> Friends </h4>
+        <% for(u of all_users) { %>
+        <p>
+          <a href="users/profile/<%= u.id %>"> <%=  u.name  %></a>
+        </p>
+        <% } %>
+
+      </div>
+       
+<div id="messages">
+  <h2> Messages Section </h2>
+  <h2> Under Construction </h2>
+</div>
+
     </section>
 
 
