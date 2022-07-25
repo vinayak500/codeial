@@ -7,10 +7,12 @@ const commentSchema = new mongoose.Schema({
         } ,
         user : {
             type: mongoose.Schema.Types.ObjectId,
+            // refer to User database model
             ref: 'User'
         } ,
         post :{
             type: mongoose.Schema.Types.ObjectId,
+            //refer to Post database model
             ref: 'Post'
         }
 } ,{

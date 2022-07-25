@@ -1,1 +1,8 @@
+::-webkit-scrollbar {
+  display: none; }
 
+#outer-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white; }
