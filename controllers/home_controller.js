@@ -1,7 +1,7 @@
 const Post = require('../models/post');
 const User = require('../models/users');
 
-module.exports.home = function(req , res){
+module.exports.home = async function(req , res){
         //   return res.end('<h1> Home Page </h1>')
 
         // cookie data can be altered or changed in both browser or server side
@@ -18,7 +18,7 @@ module.exports.home = function(req , res){
 
 
 // populate the user of each part
-       Post.find({}).populate('user').populate({
+    /*   Post.find({}).populate('user').populate({
         path: 'comments',
         populate: {
                 path:'user'
@@ -36,9 +36,38 @@ module.exports.home = function(req , res){
          })
 
        
-       });
+       }); */
+
 
         // return res.render('home' , {
         //         title: "Home"
         // });
+
+
+
+
+
+try{
+      let posts = await Post.find({}).populate('user').populate({
+        path: 'comments',
+        populate: {
+                path:'user'
+        }
+       });
+
+       let users = await User.find({});
+
+
+       return res.render('home' , {
+        title:'Codeial | Home' ,
+        posts : posts ,
+        all_users : users 
+         });
+        }    
+ catch(err) {
+        console.log(err);
+        }
+
+
+
 }
