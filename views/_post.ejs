@@ -1,9 +1,10 @@
 <li id="post-<%= post._id %>"> 
     <p>
-     
+      <img id="image1" src="<%= post.user.avatar %>" alt="<%= post.user.name %>" width="50" height="50">
         <%= post.content %> 
 
       <br>
+
        <small>
          <%= post.user.name %>
        </small>

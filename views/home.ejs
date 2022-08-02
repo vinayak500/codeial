@@ -7,9 +7,16 @@
 <div id="main">
   <section id="profile">
     <h2> Profile </h2>
-    <h2> Under Construction!! </h2>
+    <!-- <h2> Under Construction!! </h2> -->
     <% if(locals.user){ %>
-      <a href="/users/profile"> <h2> <%= user.name %> </h2> </a>
+      <img id="image2" src="<%= user.avatar %>" alt="<%= user.name %>" width="100" height="100">
+
+      <a href="users/profile/<%= user.id %>"> <%=  user.name  %></a>
+        <!-- <h2 id="profile-name">   -->
+          <!-- <%= user.name %>  -->
+        <!-- </h2>  -->
+      </a>
+
   <% } %>
 
     </section>
@@ -42,19 +49,23 @@
   
       <div id="friends">
         <h2> Friends Section</h2>
-        <h2> Under Construction </h2>
+        <!-- <h2> Under Construction </h2> -->
         <h4> Friends </h4>
         <% for(u of all_users) { %>
-        <p>
-          <a href="users/profile/<%= u.id %>"> <%=  u.name  %></a>
-        </p>
+        <%  if(u.id != user.id){ %>
+            <p>
+              <img id="image1" src="<%= u.avatar %>" alt="<%= u.name %>" width="50" height="50">
+              <a href="users/profile/<%= u.id %>"> <%=  u.name  %></a>
+            </p>
+      <%    }  %>
+    
         <% } %>
 
       </div>
        
 <div id="messages">
   <h2> Messages Section </h2>
-  <h2> Under Construction </h2>
+  <!-- <h2> Under Construction </h2> -->
 </div>
 
     </section>
