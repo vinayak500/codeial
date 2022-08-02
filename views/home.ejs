@@ -52,12 +52,12 @@
         <!-- <h2> Under Construction </h2> -->
         <h4> Friends </h4>
         <% for(u of all_users) { %>
-        <%  if(u.id != user.id){ %>
+        <!-- <%  if(u != locals.user){ %> -->
             <p>
               <img id="image1" src="<%= u.avatar %>" alt="<%= u.name %>" width="50" height="50">
               <a href="users/profile/<%= u.id %>"> <%=  u.name  %></a>
             </p>
-      <%    }  %>
+      <!-- <%    }  %> -->
     
         <% } %>
 
