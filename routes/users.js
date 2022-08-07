@@ -4,11 +4,11 @@ const passport = require('passport');
 const usercontroller = require('../controllers/user_controller');
 
 
-router.get('/profile/:id' , passport.checkAuthentication ,  usercontroller.profile );
+
 router.get('/sign-in' , usercontroller.signIn );
 router.get('/sign-up' , usercontroller.signUp );
 router.post('/create' , usercontroller.create );
-router.post('/update/:id' , passport.checkAuthentication ,  usercontroller.update );
+
 
 //use passport as middleware to authenticate
 router.post('/create-session' , passport.authenticate(
@@ -19,4 +19,9 @@ router.post('/create-session' , passport.authenticate(
 
 
 router.get('/sign-out' , usercontroller.destroySession);
+
+router.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
+router.get('/auth/google/callback', passport.authenticate('google', {failureRedirect: '/users/sign-in'}), usercontroller.createSession);
+
+
 module.exports = router;

@@ -28,7 +28,7 @@ try{
        posts.remove();
       await  Comment.deleteMany({post : req.params.id});   
       return res.json(200,{
-        message: "Post and associated message deleted!"
+        message: "Post and associated comments deleted!"
       });
     }
     else{
