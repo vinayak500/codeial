@@ -1,5 +1,7 @@
 const Comment = require('../models/comment');
 const Post = require('../models/post');
+const commentsMailer = require('../mailers/commentsmailer');
+
 
 module.exports.create = function(req , res){
      Post.findById(req.body.post , function(err , post){
@@ -22,6 +24,11 @@ module.exports.create = function(req , res){
 post.comments.push(comment);
 //call save after updating
 post.save();
+
+comment = await comment.populate('user', 'name email').execPopulate();
+commentsMailer.newComment(comment);
+
+
 return res.redirect('back');
             });
         }
