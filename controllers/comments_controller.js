@@ -25,8 +25,8 @@ post.comments.push(comment);
 //call save after updating
 post.save();
 
-comment = await comment.populate('user', 'name email').execPopulate();
-commentsMailer.newComment(comment);
+// comment = await comment.populate('user', 'name email').execPopulate();
+// commentsMailer.newComment(comment);
 
 
 return res.redirect('back');
